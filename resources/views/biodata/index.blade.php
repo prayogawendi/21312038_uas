@@ -23,19 +23,18 @@ Daftar Biodata
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Npm</th>
       <th scope="col">Nama</th>
-      <th scope="col">Umur</th>
-      <th scope="col">Bio</th>
-      <th scope="col">Action</th>
+      <th scope="col">Alamat</th>
     </tr>
   </thead>
   <tbody>
     @forelse ($biodata as $key => $item)
     <tr>
       <td>{{$key + 1}}</td>
+      <td>{{$item->npm}}</td>
       <td>{{$item->nama}}</td>
-      <td>{{$item->umur}}</td>
-      <td>{{$item->bio}}</td>
+      <td>{{$item->alamat}}</td>
       <td>
       <form action="/biodata/{{ $item->id }}" method="POST">
         <a href="/biodata/{{ $item->id }}/edit" class="btn btn-warning btn-sm">Edit</a>

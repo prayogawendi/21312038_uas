@@ -9,6 +9,14 @@ edit BIodata
     @csrf
     @method('PUT')
     <div class="form-group">
+        <label>Npm</label>
+        <input type="text" name="npm" value="{{ $biodata->npm }}" class="form-control">
+    </div>
+    @error('npm')
+        <div class="alert alert-danger">{{$message }}</div>
+    @enderror
+
+    <div class="form-group">
         <label>Nama</label>
         <input type="text" name="nama" value="{{ $biodata->nama }}" class="form-control">
     </div>
@@ -17,18 +25,10 @@ edit BIodata
     @enderror
 
     <div class="form-group">
-        <label>Umur</label>
-        <input type="number" name="umur" value="{{ $biodata->umur }}" class="form-control">
+        <label>Alamat</label>
+        <input type="text" name="alamat" value="{{ $biodata->alamat }}" class="form-control">
     </div>
-    @error('umur')
-        <div class="alert alert-danger">{{$message }}</div>
-    @enderror
-
-    <div class="form-group">
-        <label>Bio</label>
-        <textarea class="form-control" name="bio">{{ $biodata->bio }}</textarea>
-    </div>
-    @error('bio')
+    @error('alamat')
         <div class="alert alert-danger">{{$message }}</div>
     @enderror
 
